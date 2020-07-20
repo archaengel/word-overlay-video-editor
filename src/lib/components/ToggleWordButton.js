@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const ToggleWordButton = styled.button`
   background-color: #ffffff3d;
-  border-radius: 3d;
+  border-radius: 3px;
   border: none;
   color: ${(props) => (props.dark ? '#000' : '#fff')};
   cursor: pointer;

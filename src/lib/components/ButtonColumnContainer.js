@@ -6,7 +6,7 @@ export const ButtonColumnContainer = styled.div`
   height: 100%;
   flex-direction: column;
   justify-items: flex-start;
-  padding: 10px;
+  padding: 0 10px;
   & ${ToggleWordButton} {
     margin-bottom: 10px;
   }

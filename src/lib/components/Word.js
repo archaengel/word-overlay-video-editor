@@ -15,6 +15,8 @@ export const Word = styled(DragPreviewContainer)`
   line-height: 80%;
   top: ${(props) => props.top}px;
   left: ${(props) => props.left}px;
+  box-sizing: ${(props) => (props.isPreview ? 'content-box' : 'border-box')};
+  border: ${(props) => (props.isPreview ? 'solid #47a2fa 1px' : 'none')};
   transition: color 0.25s;
   transition-timing-function: cubic-bezier(1, -0.91, 0.9, 1.45);
   z-index: 2;
