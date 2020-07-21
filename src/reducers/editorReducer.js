@@ -3,7 +3,26 @@ import {
   MOVE_WORD,
   ROTATE_COLOR,
   TOGGLE_WORD,
+  COUNT_WORDS,
 } from '../actions';
+import { topKWords } from '../lib/utils';
+
+const makeNewState = (words) => {
+  let newState = {};
+  let i = 0;
+  for (const word of words) {
+    newState[word] = {
+      top: 20 + i * 70,
+      left: 30,
+      isHidden: false,
+      color: colors[0],
+      colorIndex: 0,
+    };
+    i++;
+  }
+  return newState;
+};
+
 const colors = ['#DB4437', '#4285F4', '#0F9D58', '#F4B400', '#FFFFFF'];
 const initialState = {
   words: {
@@ -107,6 +126,15 @@ export const editorReducer = (state = initialState, action) => {
             isHidden: !word.isHidden,
           },
         },
+      };
+    }
+    case COUNT_WORDS: {
+      const { pages } = action.payload;
+      const topWords = topKWords(pages);
+      const newState = makeNewState(topWords);
+      return {
+        ...state,
+        words: newState,
       };
     }
     default: {

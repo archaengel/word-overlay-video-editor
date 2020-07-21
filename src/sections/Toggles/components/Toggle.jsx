@@ -10,7 +10,7 @@ export const Toggle = ({ word }) => {
   };
   return (
     <ToggleWordButton onClick={handleClick}>
-      {`Toggle ${word}`}
+      {`Toggle "${word}"`}
     </ToggleWordButton>
   );
 };

@@ -21,12 +21,12 @@ export const Editor = ({ source, type }) => {
   });
   const renderDragWord = (word) => {
     const { top, left } = words[word];
-    return <DragWord word={word} top={top} left={left} />;
+    return <DragWord key={word} word={word} top={top} left={left} />;
   };
   return (
     <EditorContainer ref={drop}>
       {Object.keys(words).map(renderDragWord)}
-      <video autoplay loop>
+      <video autoPlay loop>
         <source src={source} type={type} />
       </video>
     </EditorContainer>

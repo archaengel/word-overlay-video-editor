@@ -4,7 +4,7 @@ export const ToggleWordButton = styled.button`
   background-color: #ffffff3d;
   border-radius: 3px;
   border: none;
-  color: ${(props) => (props.dark ? '#000' : '#fff')};
+  color: #fff;
   cursor: pointer;
   max-width: 300px;
   padding: 10px 12px;

@@ -8,7 +8,7 @@ export const Toggles = () => {
   return (
     <ButtonColumnContainer>
       {Object.keys(words).map((word) => (
-        <Toggle word={word} />
+        <Toggle key={`toggle-${word}`} word={word} />
       ))}
     </ButtonColumnContainer>
   );

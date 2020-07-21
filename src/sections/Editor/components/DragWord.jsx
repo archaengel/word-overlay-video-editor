@@ -18,8 +18,11 @@ export const DragWord = ({ word }) => {
     defaultShow: false,
     containerId: 'root',
   });
+
   const [, drop, preview] = useDrag({
     item: { type: 'WORD', key: word, top, left, color },
+
+    // Callback which fires on drag start
     begin: () => {
       dispatch({
         type: SET_DRAGGED_WORD,
@@ -27,6 +30,8 @@ export const DragWord = ({ word }) => {
       });
       stopTipTimer();
     },
+
+    // Callback which fires on drag end
     end: () => {
       dispatch({
         type: MOVE_WORD,
@@ -65,6 +70,7 @@ export const DragWord = ({ word }) => {
     hide();
   }
 
+  // subscribe to winodw scroll event
   useEvent('scroll', scrollHandler);
 
   useEffect(() => {
