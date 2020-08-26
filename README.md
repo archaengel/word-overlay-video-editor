@@ -1,5 +1,7 @@
 # Word Overlay Video Editor
 
+![](public/assets/demo.gif)
+
 ## Table of Contents
 
 - [Getting Started](#getting_started)
